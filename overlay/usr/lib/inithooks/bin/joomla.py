@@ -9,6 +9,7 @@ Option:
 
 import sys
 import getopt
+import inithooks_cache
 import random
 import string
 import hashlib
@@ -54,6 +55,8 @@ def main():
             "Joomla Email",
             "Enter email address for the Joomla 'admin' account.",
             "admin@example.com")
+
+    inithooks_cache.write('APP_EMAIL', email)
 
     salt_chars = string.letters + string.digits
     salt = "".join(random.choice(salt_chars) for c in range(32))
