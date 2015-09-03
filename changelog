@@ -1,5 +1,7 @@
-turnkey-joomla25-14.0 (1) turnkey; urgency=low
+turnkey-joomla3-14.0 (1) turnkey; urgency=low
 
+  * Forked from joomla25 appliance.
+  
   * Upgraded to latest version of Joomla (3.4.1).
  
   * Replaced PHPMyAdmin with Adminer
