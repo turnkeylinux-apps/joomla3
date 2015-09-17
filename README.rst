@@ -1,5 +1,5 @@
-Joomla 3.x - Cutting Edge Content Management
-============================================
+Joomla 3 - Cutting Edge Content Management
+==========================================
 
 `Joomla!`_ is an award-winning Content Management System (CMS) for
 building websites as well as a Model-view-controller (MVC) Web
@@ -11,7 +11,7 @@ internationalization.
 This appliance includes all the standard features in `TurnKey Core`_,
 and on top of that:
 
-- Joomla 3.x configurations:
+- Joomla 3 configurations:
    
    - Installed from upstream source code to /var/www/joomla
 
