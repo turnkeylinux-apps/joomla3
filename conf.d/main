@@ -33,7 +33,7 @@ $MYSQL_BATCH --execute "grant all privileges on $DB_NAME.* to $DB_USER@localhost
 # copy in precreated configuration file
 CONF=$WEBROOT/configuration.php
 mv $SRC/joomla_configuration.php $CONF
-#chown www-data:www-data $CONF
+chown www-data:www-data $CONF
 sed -i "s|^.*public \$password = '.*|    public \$password = '$DB_PASS';|" $CONF
 
 # write DB tables using Joomla SQL
