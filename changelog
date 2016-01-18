@@ -1,3 +1,14 @@
+turnkey-joomla3-14.1 (1) turnkey; urgency=low
+
+  * Upgraded to latest version of Joomla (3.4.8).
+
+  * Fixed #539 (configuration.php ownership).
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Anton Pyrogovskyi <q@dae.pp.ua>  Thu, 15 Jan 2016 17:44:59 +0100
+
 turnkey-joomla3-14.0 (1) turnkey; urgency=low
 
   * Forked from joomla25 appliance.
