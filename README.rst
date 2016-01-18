@@ -1,5 +1,5 @@
-Joomla 3 - Cutting Edge Content Management
-==========================================
+Joomla 3 - Mobile-ready user-friendly content management
+========================================================
 
 `Joomla!`_ is an award-winning Content Management System (CMS) for
 building websites as well as a Model-view-controller (MVC) Web
