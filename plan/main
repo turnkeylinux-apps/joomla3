@@ -2,4 +2,5 @@
 #include <turnkey/lamp>
 
 php5-gd
+jq	/* dependnacy for checking version from GitHub */
 
