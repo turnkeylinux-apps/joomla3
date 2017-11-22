@@ -1,5 +1,8 @@
 #include <turnkey/base>
 #include <turnkey/lamp>
 
-php5-gd
+php-gd
+php-xml
+php-mbstring
+php-mcrypt
 
