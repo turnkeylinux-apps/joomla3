@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Set Joomla admin password and email
 
 Option:
@@ -19,16 +19,16 @@ from mysqlconf import MySQL
 
 def usage(s=None):
     if s:
-        print >> sys.stderr, "Error:", s
-    print >> sys.stderr, "Syntax: %s [options]" % sys.argv[0]
-    print >> sys.stderr, __doc__
+        print("Error:", s, file=sys.stderr)
+    print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
+    print(__doc__, file=sys.stderr)
     sys.exit(1)
 
 def main():
     try:
         opts, args = getopt.gnu_getopt(sys.argv[1:], "h",
                                        ['help', 'pass=', 'email='])
-    except getopt.GetoptError, e:
+    except getopt.GetoptError as e:
         usage(e)
 
     password = ""
@@ -58,9 +58,9 @@ def main():
 
     inithooks_cache.write('APP_EMAIL', email)
 
-    salt_chars = string.letters + string.digits
+    salt_chars = string.ascii_letters + string.digits
     salt = "".join(random.choice(salt_chars) for c in range(32))
-    cryptpass = "%s:%s" % (hashlib.md5(password + salt).hexdigest(), salt)
+    cryptpass = "%s:%s" % (hashlib.md5((password + salt).encode('utf8')).hexdigest(), salt)
 
     m = MySQL()
     m.execute('UPDATE joomla.jos_users SET email=\"%s\" WHERE username=\"admin\";' % email)
