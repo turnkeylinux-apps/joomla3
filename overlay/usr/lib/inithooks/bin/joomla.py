@@ -63,8 +63,8 @@ def main():
     cryptpass = "%s:%s" % (hashlib.md5((password + salt).encode('utf8')).hexdigest(), salt)
 
     m = MySQL()
-    m.execute('UPDATE joomla.jos_users SET email=\"%s\" WHERE username=\"admin\";' % email)
-    m.execute('UPDATE joomla.jos_users SET password=\"%s\" WHERE username=\"admin\";' % cryptpass)
+    m.execute('UPDATE joomla.jos_users SET email=%s WHERE username=\"admin\";', (email,))
+    m.execute('UPDATE joomla.jos_users SET password=%s WHERE username=\"admin\";', (cryptpass,))
 
 if __name__ == "__main__":
     main()
