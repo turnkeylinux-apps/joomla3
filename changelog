@@ -1,3 +1,15 @@
+turnkey-joomla3-16.1 (1) turnkey; urgency=low
+
+  * Update Joomla to 3.9.24.
+
+  * Pre-install 'Joomla Console' (provides 'joomla' cli tool) and
+    'turnkey-joomla' wrapper script - closes #1405.
+
+  * Note: Please refer to turnkey-core's 16.1 changelog for changes common to
+    all appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Mon, 22 Feb 2021 16:11:30 +1100
+
 turnkey-joomla3-16.0 (1) turnkey; urgency=low
 
   * Update Joomla to upstream version v3.9.16. Resolves Joomla bugs &
