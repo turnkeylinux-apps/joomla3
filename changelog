@@ -1,3 +1,21 @@
+turnkey-joomla3-17.0 (1) turnkey; urgency=low
+
+  * Update Joomla to 3.10.6.
+
+  * Move install to use 'Joomla Console' rather than manual.
+
+    database name changed from `joomla` -> `sites_joomla`
+    table prefix change from `jos_` -> `j_`
+
+  * Includes PHP 7.4.
+
+  * Updated all relevant Debian packages to Bullseye/11 versions
+
+  * Note: Please refer to turnkey-core's 17.0 changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Stefan Davis <stefan@turnkeylinux.org>  Thu, 24 Feb 2022 00:31:36 +0000
+
 turnkey-joomla3-16.1 (1) turnkey; urgency=low
 
   * Update Joomla to 3.9.24.
