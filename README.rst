@@ -15,6 +15,8 @@ and on top of that:
    
    - Installed from upstream source code to /var/www/joomla
 
+   - Includes `Joomla Console`_
+
    **Security note**: Updates to Joomla may require supervision so
    they **ARE NOT** configured to install automatically. See `Joomla
    documentation`_ for upgrading.
@@ -41,3 +43,4 @@ Credentials *(passwords set at first boot)*
 .. _Adminer: https://www.adminer.org
 .. _Joomla documentation: https://docs.joomla.org/J3.x:Updating_from_an_existing_version
 .. _Joomla Security Feed: http://feeds.joomla.org/JoomlaSecurityNews
+.. _Joomla Console: https://github.com/joomlatools/joomlatools-console

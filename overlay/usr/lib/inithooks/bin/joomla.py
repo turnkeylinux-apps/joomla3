@@ -9,12 +9,12 @@ Option:
 
 import sys
 import getopt
-import inithooks_cache
+from libinithooks import inithooks_cache
 import random
 import string
 import hashlib
 
-from dialog_wrapper import Dialog
+from libinithooks.dialog_wrapper import Dialog
 from mysqlconf import MySQL
 
 def usage(s=None):
@@ -63,8 +63,8 @@ def main():
     cryptpass = "%s:%s" % (hashlib.md5((password + salt).encode('utf8')).hexdigest(), salt)
 
     m = MySQL()
-    m.execute('UPDATE joomla.jos_users SET email=%s WHERE username=\"admin\";', (email,))
-    m.execute('UPDATE joomla.jos_users SET password=%s WHERE username=\"admin\";', (cryptpass,))
+    m.execute('UPDATE sites_joomla.j_users SET email=%s WHERE username=\"admin\";', (email,))
+    m.execute('UPDATE sites_joomla.j_users SET password=%s WHERE username=\"admin\";', (cryptpass,))
 
 if __name__ == "__main__":
     main()
