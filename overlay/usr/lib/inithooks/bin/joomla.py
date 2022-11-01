@@ -9,13 +9,14 @@ Option:
 
 import sys
 import getopt
-from libinithooks import inithooks_cache
 import random
 import string
 import hashlib
 
+from libinithooks import inithooks_cache
 from libinithooks.dialog_wrapper import Dialog
 from mysqlconf import MySQL
+
 
 def usage(s=None):
     if s:
@@ -23,6 +24,7 @@ def usage(s=None):
     print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
     print(__doc__, file=sys.stderr)
     sys.exit(1)
+
 
 def main():
     try:
@@ -66,6 +68,6 @@ def main():
     m.execute('UPDATE sites_joomla.j_users SET email=%s WHERE username=\"admin\";', (email,))
     m.execute('UPDATE sites_joomla.j_users SET password=%s WHERE username=\"admin\";', (cryptpass,))
 
+
 if __name__ == "__main__":
     main()
-

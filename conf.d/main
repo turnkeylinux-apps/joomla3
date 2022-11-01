@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-JOOMLA_VER=3.10.8
+JOOMLA_VER=3.10.11
 
 ADMIN_NAME=admin
 ADMIN_PASS=turnkey
@@ -33,12 +33,11 @@ service mysql start
 mysqladmin create $DB_NAME
 mysql --batch --execute "grant all privileges on $DB_NAME.* to $DB_USER@localhost identified by '$DB_PASS'; flush privileges;"
 
-joomla site:create joomla --release=$JOOMLA_VER --www /var/www --disable-ssl \
+joomla site:create joomla --release=$JOOMLA_VER --www /var/www \
     -L "$DB_USER:$DB_PASS" --skip-create-statement
 
 # update apache configuration
 a2dissite 000-default
-a2ensite joomla
 a2enmod rewrite
 
 ## enable clean urls
@@ -57,7 +56,11 @@ $MYSQL_BATCH "INSERT INTO ${DB_PREFIX}content_frontpage VALUES (1,1);"
 $MYSQL_BATCH "INSERT INTO ${DB_PREFIX}assets (\`parent_id\`, \`lft\`, \`rgt\`, \`level\`, \`name\`, \`title\`, \`rules\`) VALUES ('27', '19', '20', '3', 'com_content.article.1', 'Welcome to TurnKey Joomla', '{\"core.delete\":[],\"core.edit\":[],\"core.edit.state\":[]}');"
 
 service mysql stop
-service apache2 stop
+
+# joomla seems to create an apache joomla.conf but it's an actual file in
+# sites-enabled; this replaces the file with a symlink to our joomla.conf
+rm -f /etc/apache2/sites-enabled/joomla.conf
+a2ensite joomla
 
 rm -f /usr/local/src/Joomla*
 rm /usr/local/bin/sudo
